@@ -6,7 +6,7 @@
          verbose="true">
     <testsuites>
         <testsuite name="edoger">
-            <file>Tests/MazeTest/MarkTest.php</file>
+            <file>Tests/MazeTest/MazeTest.php</file>
         </testsuite>
     </testsuites>
     <filter>
