@@ -14,6 +14,27 @@ Maze is a PHP configuration file manager.
 composer require edoger/maze
 ```
 
+# Example #
+
+```php
+<?php
+use Maze\Maze;
+
+// Create Maze configuration file manager instanse.
+$maze = new Maze("Your/configuration/file/root/directory");
+
+// Load: Your/configuration/file/root/directory/maze.conf.php
+$items = $maze->load('maze');
+
+$items->exists('key');       // Check whether the configuration item exists.
+$items->get('key');          // Get a configuration item value.
+$items->all();               // Get all configuration item values.
+$items->set('key', 'value'); // Add or update a configuration item.
+$items->forget('key');       // Forget a configuration item.
+$items->merge($items);       // Merge all configuration items from another items instance.
+?>
+```
+
 # License #
 
 [Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0)
