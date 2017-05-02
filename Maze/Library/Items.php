@@ -41,7 +41,7 @@ class Items
      * @param   string  $key  The configuration item name.
      * @return  boolean
      */
-    public function exists(string $key)
+    public function exists($key)
     {
 
         return array_key_exists($key, $this->items);
@@ -54,7 +54,7 @@ class Items
      * @param   mixed    $default  The default value.
      * @return  mixed
      */
-    public function get(string $key, $default = null)
+    public function get($key, $default = null)
     {
         if ($this->exists($key)) {
             $item = $this->items[$key];
@@ -98,7 +98,7 @@ class Items
      * @param   boolean  $cover   Overlay operation.
      * @return  boolean
      */
-    public function set(string $key, $value, bool $cover = false)
+    public function set($key, $value, $cover = false)
     {
         if ($cover || !$this->exists($key)) {
             $this->items[$key] = $value;
@@ -115,7 +115,7 @@ class Items
      * @param   boolean  $cover   Overlay operation.
      * @return  self
      */
-    public function merge(self $items, bool $cover = true)
+    public function merge(self $items, $cover = true)
     {
         foreach ($items->all() as $key => $value) {
             $this->set($key, $value, $cover);
@@ -130,7 +130,7 @@ class Items
      * @param   string  $key  The configuration item name.
      * @return  self
      */
-    public function forget(string $key)
+    public function forget($key)
     {
         if ($this->exists($key)) {
             unset($this->items[$key]);
