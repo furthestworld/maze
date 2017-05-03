@@ -9,12 +9,12 @@
  *| @author    Qingshan Luo <shanshan.lqs@gmail.com>                                               |
  *+------------------------------------------------------------------------------------------------+
  */
-namespace Maze\Library;
+namespace Maze;
 
 /**
  * Maze configuration item manager.
  */
-class Items
+class Bag
 {
     /**
      * All loaded configuration items.
@@ -98,7 +98,7 @@ class Items
      * @param   boolean  $cover   Overlay operation.
      * @return  boolean
      */
-    public function set($key, $value, $cover = false)
+    public function set($key, $value, $cover = true)
     {
         if ($cover || !$this->exists($key)) {
             $this->items[$key] = $value;
