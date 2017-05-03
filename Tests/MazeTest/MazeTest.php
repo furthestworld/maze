@@ -22,10 +22,10 @@ class MazeTest extends TestCase
 
     public function testMaze()
     {
-        $maze  = new Maze(dirname(__DIR__));
-        $items = $maze->load('test');
+        $maze = new Maze(dirname(__DIR__));
+        $bag  = $maze->load('test');
 
-        $this->assertEquals($items->all(), require (dirname(__DIR__) . '/test.conf.php'));
-        $this->assertEquals($items->get('testKey2.key'), 'value');
+        $this->assertEquals($bag->all(), require (dirname(__DIR__) . '/test.conf.php'));
+        $this->assertEquals($bag->get('testKey2.key'), 'value');
     }
 }
