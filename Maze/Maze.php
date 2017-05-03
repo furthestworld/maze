@@ -11,8 +11,6 @@
  */
 namespace Maze;
 
-use Maze\Library\Items;
-
 /**
  * Maze configuration file manager.
  *
@@ -61,6 +59,6 @@ class Maze
             }
         }
 
-        return new Items($items);
+        return new Bag($items);
     }
 }
